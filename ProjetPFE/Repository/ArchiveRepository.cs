@@ -43,7 +43,7 @@ namespace ProjetPFE.Repository
 
         public async Task<archive> CreateArchive(ArchiveForCreationDto archive)
         {
-            var query = "INSERT INTO archive (compte_winds, demande_id) VALUES (@compte_winds, @demande_id)" + "SELECT CAST(SCOPE_IDENTITY() as int)";
+            var query = "INSERT INTO archive (num_arch, demande_id) VALUES (@num_arch, @demande_id)" + "SELECT CAST(SCOPE_IDENTITY() as int)";
 
             var parameters = new DynamicParameters();
             parameters.Add("num_arch", archive.num_arch, DbType.Int32);
