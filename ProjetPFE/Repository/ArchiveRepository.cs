@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using ProjetPFE.Context;
+using ProjetPFE.Contracts;
 using ProjetPFE.Dto;
 using ProjetPFE.Entities;
 using System.Data;
