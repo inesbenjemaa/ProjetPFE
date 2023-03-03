@@ -60,7 +60,6 @@ namespace ProjetPFE.Repository
                     matricule = demandeur.matricule,
                     fonction = demandeur.fonction,
                     matricule_resp = demandeur.matricule_resp,
-
                     email = demandeur.email,
                 };
                 return createddemandeur;
