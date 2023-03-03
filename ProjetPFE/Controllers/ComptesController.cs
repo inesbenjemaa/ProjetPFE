@@ -36,15 +36,15 @@ namespace ProjetPFE.Controllers
 
 
         [HttpGet("{compte_id}", Name = "compteById")]
-        public async Task<IActionResult> GetRole(int role_id)
+        public async Task<IActionResult> GetCompte(int compte_id)
         {
             try
             {
-                var role = await _roleRepo.GetRole(role_id);
-                if (role == null)
+                var compte = await _compteRepo.GetCompte(compte_id);
+                if (compte == null)
                     return NotFound();
 
-                return Ok(role);
+                return Ok(compte);
             }
             catch (Exception ex)
             {
@@ -55,12 +55,12 @@ namespace ProjetPFE.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> CreateRole(RoleForCreationDto role)
+        public async Task<IActionResult> CreateCompte(CompteForCreationDto compte)
         {
             try
             {
-                var createdrole = await _roleRepo.CreateRole(role);
-                return CreatedAtRoute("roleById", new { role_id = createdrole.role_id }, createdrole);
+                var createdcompte = await _compteRepo.CreateCompte(compte);
+                return CreatedAtRoute("roleById", new { compte_id = createdcompte.compte_id }, createdcompte);
             }
             catch (Exception ex)
             {
@@ -70,16 +70,16 @@ namespace ProjetPFE.Controllers
         }
 
 
-        [HttpPut("{role_id}")]
-        public async Task<IActionResult> UpdateRole(int role_id, RoleForUpdateDto role)
+        [HttpPut("{compte_id}")]
+        public async Task<IActionResult> UpdateCompte(int compte_id, CompteForUpdateDto compte)
         {
             try
             {
-                var dbrole = await _roleRepo.GetRole(role_id);
-                if (dbrole == null)
+                var dbcompte = await _compteRepo.GetCompte(compte_id);
+                if (dbcompte == null)
                     return NotFound();
 
-                await _roleRepo.UpdateRole(role_id, role);
+                await _compteRepo.UpdateCompte(compte_id, compte);
                 return NoContent();
             }
             catch (Exception ex)
@@ -91,16 +91,16 @@ namespace ProjetPFE.Controllers
 
 
 
-        [HttpDelete("{role_id}")]
-        public async Task<IActionResult> DeleteRole(int role_id)
+        [HttpDelete("{compte_id}")]
+        public async Task<IActionResult> DeleteCompte(int compte_id)
         {
             try
             {
-                var dbrole = await _roleRepo.GetRole(role_id);
-                if (dbrole == null)
+                var dbcompte = await _compteRepo.GetCompte(compte_id);
+                if (dbcompte == null)
                     return NotFound();
 
-                await _roleRepo.DeleteRole(role_id);
+                await _compteRepo.DeleteCompte(compte_id);
                 return NoContent();
             }
             catch (Exception ex)
