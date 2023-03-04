@@ -1,4 +1,7 @@
-﻿namespace ProjetPFE.Entities;
+﻿using ProjetPFE.Helpers;
+using System.ComponentModel.DataAnnotations;
+
+namespace ProjetPFE.Entities;
 
 public class demandeur
 {
@@ -10,9 +13,13 @@ public class demandeur
     public string? matricule_resp { get; set; }
     public string? email { get; set; }
 
+    public string? compte_winds { get; set; }
 
-    public List<role> roles { get; set; }   = new List<role>();
-    public List<compte> comptes { get; set; } = new List<compte>();
+
+    [EnumDataType(typeof(nom_role))]
+    public nom_role nom_role { get; set; }
+
+
     public List<demande> demandes { get; set; } = new List<demande>();
     public List<valid_dem> validations { get; set; } = new List<valid_dem>();
 }

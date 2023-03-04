@@ -1,4 +1,7 @@
-﻿namespace ProjetPFE.Dto
+﻿using ProjetPFE.Helpers;
+using System.ComponentModel.DataAnnotations;
+
+namespace ProjetPFE.Dto
 {
     public class DemandeurForUpdateDto
     {
@@ -9,5 +12,8 @@
         public string? matricule_resp { get; set; }
        
         public string? email { get; set; }
+        public string? compte_winds { get; set; }
+       
+        public nom_role nom_role { get; set; }
     }
 }
