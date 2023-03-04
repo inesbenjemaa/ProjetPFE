@@ -17,8 +17,10 @@ public class demande
     public DateTime creation_date { get; set; }
     public string? affectation { get; set; }
     public string? diplome { get; set; }
+
+    public int num_arch { get; set; }
     public List<statut_demande> statuts { get; set; } = new List<statut_demande>();
-    public List<archive> archives { get; set; } = new List<archive>();
+    
 
 
 }

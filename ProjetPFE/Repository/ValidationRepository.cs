@@ -22,8 +22,8 @@ namespace ProjetPFE.Repository
 
             using (var connection = _context.CreateConnection())
             {
-                var statuts = await connection.QueryAsync<valid_dem>(query);
-                return statuts.ToList();
+                var validations = await connection.QueryAsync<valid_dem>(query);
+                return validations.ToList();
             }
         }
         public async Task<valid_dem> GetValidation(int validation_id)

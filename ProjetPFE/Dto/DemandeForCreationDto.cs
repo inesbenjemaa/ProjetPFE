@@ -18,5 +18,6 @@
         public DateTime creation_date { get; set; }
         public string? affectation { get; set; }
         public string? diplome { get; set; }
+        public int num_arch { get; set; }
     }
 }
