@@ -44,7 +44,7 @@ namespace ProjetPFE.Repository
             var parameters = new DynamicParameters();
             //parameters.Add("validation_id", valid_dem.validation_id, DbType.Int32);
             parameters.Add("demandeur_id", valid_dem.demandeur_id, DbType.Int32);
-            parameters.Add("validation", valid_dem.validation, DbType.Int32);
+            parameters.Add("validation", valid_dem.validation, DbType.String);
 
 
             using (var connection = _context.CreateConnection())
@@ -67,7 +67,7 @@ namespace ProjetPFE.Repository
             var parameters = new DynamicParameters();
             parameters.Add("validation_id", validation_id, DbType.Int32);
             parameters.Add("demandeur_id", valid_dem.demandeur_id, DbType.Int32);
-            parameters.Add("validation", valid_dem.validation, DbType.Int32);
+            parameters.Add("validation", valid_dem.validation, DbType.String);
 
 
             using (var connection = _context.CreateConnection())

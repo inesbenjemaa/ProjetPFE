@@ -38,7 +38,7 @@ namespace ProjetPFE.Repository
         }
         public async Task<demandeur> CreateDemandeur(DemandeurForCreationDto demandeur)
         {
-            var query = "INSERT INTO demandeur (nom, prenom, matricule, fonction, matricule_resp,  email, compte_winds) VALUES (@nom, @prenom, @matricule, @fonction, @matricule_resp, @email, @compte_winds)" + "SELECT CAST(SCOPE_IDENTITY() as int)";
+            var query = "INSERT INTO demandeur (nom, prenom, matricule, fonction, matricule_resp,  email, compte_winds, nom_role) VALUES (@nom, @prenom, @matricule, @fonction, @matricule_resp, @email, @compte_winds, @nom_role)" + "SELECT CAST(SCOPE_IDENTITY() as int)";
 
             var parameters = new DynamicParameters();
             parameters.Add("nom", demandeur.nom, DbType.String);
@@ -48,7 +48,8 @@ namespace ProjetPFE.Repository
             parameters.Add("matricule_resp", demandeur.matricule_resp, DbType.String);
             parameters.Add("email", demandeur.email, DbType.String);
             parameters.Add("compte_winds", demandeur.compte_winds, DbType.String);
-             
+            parameters.Add("nom_role", demandeur.nom_role, DbType.String);
+
             using (var connection = _context.CreateConnection())
             {
                 var id = await connection.QuerySingleAsync<int>(query, parameters);
@@ -62,6 +63,7 @@ namespace ProjetPFE.Repository
                     matricule_resp = demandeur.matricule_resp,
                     email = demandeur.email,
                     compte_winds = demandeur.compte_winds,
+                    nom_role= demandeur.nom_role,
                 };
                 return createddemandeur;
             }
@@ -69,7 +71,7 @@ namespace ProjetPFE.Repository
 
         public async Task UpdateDemandeur(int demandeur_id, DemandeurForUpdateDto demandeur)
         {
-            var query = "UPDATE demandeur SET nom = @nom, prenom = @prenom, matricule = @matricule, fonction= @fonction, matricule_resp = @matricule_resp,  email= @email, compte_winds= @compte_winds   WHERE demandeur_id = @demandeur_id";
+            var query = "UPDATE demandeur SET nom = @nom, prenom = @prenom, matricule = @matricule, fonction= @fonction, matricule_resp = @matricule_resp,  email= @email, compte_winds= @compte_winds, nom_role= @nom_role  WHERE demandeur_id = @demandeur_id";
 
             var parameters = new DynamicParameters();
             parameters.Add("demandeur_id", demandeur_id, DbType.Int32);
@@ -78,7 +80,7 @@ namespace ProjetPFE.Repository
             parameters.Add("matricule", demandeur.matricule, DbType.String);
             parameters.Add("fonction", demandeur.fonction, DbType.String);
             parameters.Add("matricule_resp", demandeur.matricule_resp, DbType.String);
-
+            parameters.Add("nom_role", demandeur.nom_role, DbType.String);
             parameters.Add("email", demandeur.email, DbType.String);
             parameters.Add("compte_winds", demandeur.compte_winds, DbType.String);
 
