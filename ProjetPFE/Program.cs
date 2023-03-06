@@ -10,9 +10,6 @@ builder.Services.AddScoped<IDemandeurRepository, DemandeurRepository>();
 builder.Services.AddScoped<IDemandeRepository, DemandeRepository>();
 builder.Services.AddScoped<IStatutRepository, StatutRepository>();
 builder.Services.AddScoped<IValidationRepository, ValidationRepository>();
-builder.Services.AddScoped<IRoleRepository, RoleRepository>();
-builder.Services.AddScoped<ICompteRepository, CompteRepository>();
-builder.Services.AddScoped<IArchiveRepository, ArchiveRepository>();
 builder.Services.AddControllers();
 
 
