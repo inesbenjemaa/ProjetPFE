@@ -3,7 +3,7 @@
 public class demande
 { public int demande_id { get; set; }
     public int nbr_poste { get; set; }
-    public int demandeur_id { get; set; }
+
     public int nb_a { get; set; }
     public string? type_dem { get; set; }
     public string? titre_fonction { get; set; }
@@ -18,8 +18,7 @@ public class demande
     public string? affectation { get; set; }
     public string? diplome { get; set; }
 
-    public int num_arch { get; set; }
-    public List<statut_demande> statuts { get; set; } = new List<statut_demande>();
+    
     
 
 

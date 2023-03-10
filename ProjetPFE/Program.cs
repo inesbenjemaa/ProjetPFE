@@ -2,14 +2,12 @@ using ProjetPFE.Context;
 using ProjetPFE.Contracts;
 using ProjetPFE.Repository;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddSingleton<DapperContext>();
-builder.Services.AddScoped<IDemandeurRepository, DemandeurRepository>();
 builder.Services.AddScoped<IDemandeRepository, DemandeRepository>();
-builder.Services.AddScoped<IStatutRepository, StatutRepository>();
-builder.Services.AddScoped<IValidationRepository, ValidationRepository>();
 builder.Services.AddControllers();
 
 
