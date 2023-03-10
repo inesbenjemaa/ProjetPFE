@@ -1,14 +1,19 @@
 using ProjetPFE.Context;
 using ProjetPFE.Contracts;
+using ProjetPFE.Contracts.services;
 using ProjetPFE.Repository;
-
+using AutoMapper;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddSingleton<DapperContext>();
 builder.Services.AddScoped<IDemandeRepository, DemandeRepository>();
+builder.Services.AddScoped<IEmployeRepository, EmployeRepository>();
+builder.Services.AddScoped<IEmployeService, EmployeService>();
 builder.Services.AddControllers();
+builder.Services.AddAutoMapper(typeof(DapperProfile));
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

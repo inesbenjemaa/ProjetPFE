@@ -11,7 +11,7 @@ namespace ProjetPFE.Repository
     public class DemandeRepository : IDemandeRepository
     {
         private readonly DapperContext _context;
-        private readonly IStatutRepository statutRepository;
+        private readonly IDemandeRepository DemandeRepository;
       
         public DemandeRepository(DapperContext context)
         {
@@ -62,18 +62,7 @@ namespace ProjetPFE.Repository
 
 
 
-            using (var connection = _context.CreateConnection())
-            {
-                var id = await connection.QuerySingleAsync<int>(query, parameters);
-                statut_demande statut_demande = new statut_demande 
-                { 
-                    demande_id= id, 
-                    statut_demandeur = statut.en_cours,
-                    statut_chef = statut.en_attente,
-                    statut_rh = statut.en_cours,
-                    statut_ds = statut.en_cours
-                };
-                statutRepository.CreateStatut(statut_demande);
+            
 
 
                 var createddemande = new demande
