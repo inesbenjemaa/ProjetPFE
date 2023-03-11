@@ -2,8 +2,6 @@ using ProjetPFE.Context;
 using ProjetPFE.Contracts;
 using ProjetPFE.Contracts.services;
 using ProjetPFE.Repository;
-using AutoMapper;
-using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 

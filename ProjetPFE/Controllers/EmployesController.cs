@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using ProjetPFE.Contracts.services;
 
 namespace ProjetPFE.Controllers
@@ -11,7 +10,7 @@ namespace ProjetPFE.Controllers
         private readonly IEmployeService employeService;
         public EmployesController(IEmployeService employeService)
         {
-          this.employeService= employeService;
+            this.employeService = employeService;
         }
 
 

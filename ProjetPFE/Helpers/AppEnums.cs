@@ -4,15 +4,15 @@
     {
         Valid_Chef,
         Valid_Rh,
-        Valid_Ds 
-           
+        Valid_Ds
+
     }
     public enum statut
     {
-        en_cours ,
-        en_attente ,
-        valide ,
-        refuse 
+        en_cours,
+        en_attente,
+        valide,
+        refuse
 
     }
     public enum nom_role
@@ -21,7 +21,7 @@
         chef,
         rh,
         ds
-        
+
     }
 
 }

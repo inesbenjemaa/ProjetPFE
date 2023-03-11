@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using ProjetPFE.Contracts;
 using ProjetPFE.Dto;
 
@@ -112,5 +111,5 @@ namespace ProjetPFE.Controllers
 
     }
 }
-    
+
 
