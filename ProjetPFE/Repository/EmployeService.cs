@@ -15,13 +15,13 @@ namespace ProjetPFE.Repository
             this.employeRepository = employeRepository;
             this.map = map;
         }
+       
         public async Task<ICollection<EmployeDto>> RetrieveEmployes()
         {
             var employes = await this.employeRepository.Getemployes();
 
-            var EmployeDto = this.map.Map<ICollection<EmployeDto>>(employes);
+            var EmployeDto = employes.Select(e => this.map.Map<EmployeDto>(e)).ToList();
             return EmployeDto;
-
         }
 
     }
